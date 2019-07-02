@@ -24,6 +24,7 @@ const Bio = () => {
       site {
         siteMetadata {
           author
+          authorFirstName
           social {
             twitter
           }
@@ -32,7 +33,7 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author, authorFirstName, social } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -54,11 +55,11 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
+        A fair attempt to express <strong>{authorFirstName}</strong>'s opinion
+        about stuff that he works with, hate or enjoy.
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+          You can find shorter versions on Twitter.
         </a>
       </p>
     </div>
