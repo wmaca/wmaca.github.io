@@ -59,7 +59,7 @@ class Layout extends React.Component {
         <footer style={{ textAlign: `center`, color: `#999` }}>
           © Copyright {new Date().getFullYear()},{" "}
           <a href="https://macambira.co">Walter Macambira</a>. Powered by{" "}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">Gatsby</a>.
         </footer>
       </div>
     )
