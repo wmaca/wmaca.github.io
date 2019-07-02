@@ -24,7 +24,6 @@ function Bio() {
       site {
         siteMetadata {
           author
-          authorFirstName
           social {
             twitter
           }
@@ -33,7 +32,7 @@ function Bio() {
     }
   `)
 
-  const { author, authorFirstName, social } = data.site.siteMetadata
+  const { author, social } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -55,11 +54,11 @@ function Bio() {
         }}
       />
       <p>
-        A fair attempt to express <strong>{authorFirstName}</strong>'s opinion
-        about stuff that he works with, hate or enjoy.
+        A fair attempt to express <strong>{author}</strong>'s opinion about
+        stuff that he works with, hates or enjoys.
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
-          You can find shorter versions on Twitter.
+          You can find me on Twitter.
         </a>
       </p>
     </div>
