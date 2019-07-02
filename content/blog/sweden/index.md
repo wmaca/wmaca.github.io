@@ -1,6 +1,7 @@
 ---
 title: Sweden, my wife and new life
 date: "2019-01-06T19:56:03.284Z"
+description: A little about this blog and moving to Sweden
 ---
 
 Finally got some time to start this new thing.
