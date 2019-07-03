@@ -10,7 +10,7 @@ function Layout(props) {
       logo: file(absolutePath: { regex: "/logo.png/" }) {
         childImageSharp {
           fixed(height: 110) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }
