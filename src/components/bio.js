@@ -58,7 +58,7 @@ function Bio() {
         stuff that he works with, hates or enjoys.
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
-          You can find me on Twitter.
+          You can find him on Twitter.
         </a>
       </p>
     </div>
