@@ -66,7 +66,9 @@ function Layout(props) {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer style={{ textAlign: `center`, color: `#999` }}>
+      <footer
+        style={{ textAlign: `center`, color: `#999`, marginTop: rhythm(3.5) }}
+      >
         © Copyright {new Date().getFullYear()},{" "}
         <a href="https://macambira.co">Walter Macambira</a>. Powered by{" "}
         <a href="https://www.gatsbyjs.org">Gatsby</a>.
