@@ -16,10 +16,13 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
-        {posts.map(({ node }) => {
+        {posts.map(({ node }, index) => {
           const title = node.frontmatter.title || node.fields.slug
+          const style =
+            index === posts.length - 1 ? { marginBottom: rhythm(3.5) } : {}
+
           return (
-            <div key={node.fields.slug}>
+            <div key={node.fields.slug} style={style}>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),

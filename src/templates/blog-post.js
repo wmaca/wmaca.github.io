@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -36,12 +37,20 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
+
         <Bio />
+
+        <hr
+          style={{
+            marginBottom: rhythm(1),
+          }}
+        />
 
         <ul
           style={{
@@ -67,6 +76,12 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+
+        <h2>Comments</h2>
+        <div id="commento" style={{ marginBottom: rhythm(1) }}></div>
+        <Helmet>
+          <script src="https://cdn.commento.io/js/commento.js"></script>
+        </Helmet>
       </Layout>
     )
   }
