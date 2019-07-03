@@ -12,7 +12,7 @@ I am quite unsure about the content I will upload here. Surely, it will be a tec
 
 Our flight was terrible, with more than 3 hours of delay. Naturally, after more than 20 hours from our departure, we were starving, and morale was down. Thankfully, our friends picked us up in the airport. It would be a nightmare to carry 92kg of luggage around, below zero degrees Celsius.
 
-After getting the keys of our apartment, we found a pizza place a block away from home. We headed there to make our first unsupervised contact with the swedes, and ended up ordering 3 of what the attendent said to be an "individual pizza". We still had pizza in the fridge 5 days latter. 
+After getting the keys of our apartment, we found a pizza place a block away from home. We headed there to make our first unsupervised contact with the swedes, and ended up ordering 3 of what the attendent said to be an "individual pizza". We still had pizza in the fridge 5 days latter.
 
 No appointments in the following day: let's get to sleep.
 
@@ -34,7 +34,7 @@ We knew already a few things: how to get to the city center by foot and the loca
 
 In São Paulo, it was 20 degrees Celsius. As I worked in Rio de Janeiro, I could still experience something around 40 degrees on my visits to the office. That... is... not.. pleasent at all.
 
-In Linköping, it is around zero. I thought it would be worse, but it is not. With enough clothes on, it is not the end of the world. Easy to get used to. There are problems, though: 
+In Sweden, it is around zero. I thought it would be worse, but it is not. With enough clothes on, it is not the end of the world. Easy to get used to. There are problems, though:
 
 - wind is not a friend and may harm you; and
 - too many clothes to put on (even to throw the gargabe out is a complicated process of putting too many layers on).
