@@ -38,6 +38,22 @@ class BlogPostTemplate extends React.Component {
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
+        <div
+          style={{
+            background: "#eee",
+            padding: rhythm(1),
+            marginBottom: rhythm(1),
+          }}
+        >
+          <p>
+            In case anything is unclear or incorrect, feel free to reach me
+            through the comment sections below. I will be more than glad to
+            clarify anything, and mainly to learn from and correct the mistakes
+            I made.
+          </p>
+          <p style={{ marginBottom: 0 }}>But, please, be nice to me.</p>
+        </div>
+
         <hr
           style={{
             marginBottom: rhythm(1),
