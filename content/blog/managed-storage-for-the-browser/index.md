@@ -8,7 +8,7 @@ As an in-depth explanation of a managed storage solution may not be of interest 
 
 This writing will not go into the details of how to code a managed storage solution for the browser, nor try to exhaust such a broad theme. Consider this a dump of the thinking process and research behind the construction of such solution.
 
-In the end of this reading, it is expected for you to have a better understating of what the browser can and can’t do when it comes to storage, and how careful you need to be when dealing with this.
+In the end of this reading, you are expected to have a better understating of what the browser can and can’t do when it comes to storage, and to know how careful you need to be when dealing with this.
 
 ## Available browser APIs
 
@@ -57,7 +57,7 @@ Storage is a finite resource, therefore it is necessary to know how much is bein
 
 ### ACID
 
-Borrowing this acronym from database system, and probably oversimplifying it, our storage operations must:
+Borrowing this acronym from database systems, and probably oversimplifying it, our storage operations must:
 
 - be either complete or incomplete (**atomicity**), there is no middle ground;
 - take the storage management from one to another valid state (**consistency**);
