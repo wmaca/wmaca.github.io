@@ -4,7 +4,7 @@
 /static/12c9ae716e574fb19e9f30e810e73a47/d56be/logo.png 1.5x,
 /static/12c9ae716e574fb19e9f30e810e73a47/1008e/logo.png 2x" src="/static/12c9ae716e574fb19e9f30e810e73a47/c3ec4/logo.png" alt="walter macambira" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></a></h3></header><main><h1 style="margin-top:1.75rem;margin-bottom:0">Managed storage for the browser</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem">July 18, 2019</p><div><p>As an in-depth explanation of a managed storage solution may not be of interest to a broader audience, an analysis of the current available storage mechanisms, their limitations and how to use them for this purpose may be of greater value.</p>
 <p>This writing will not go into the details of how to code a managed storage solution for the browser, nor try to exhaust such a broad theme. Consider this a dump of the thinking process and research behind the construction of such solution.</p>
-<p>In the end of this reading, it is expected for you to have a better understating of what the browser can and can’t do when it comes to storage, and how careful you need to be when dealing with this.</p>
+<p>In the end of this reading, you are expected to have a better understating of what the browser can and can’t do when it comes to storage, and to know how careful you need to be when dealing with this.</p>
 <h2>Available browser APIs</h2>
 <p>Currently, browsers offer a few storage mechanisms, each with a different purpose:</p>
 <ul>
@@ -33,7 +33,7 @@
 <h3>Pressure</h3>
 <p>Storage is a finite resource, therefore it is necessary to know how much is being consumed, and how much is still available. When a certain limit is reached, the storage manager must act upon it, and free the space to ensure things will keep working.</p>
 <h3>ACID</h3>
-<p>Borrowing this acronym from database system, and probably oversimplifying it, our storage operations must:</p>
+<p>Borrowing this acronym from database systems, and probably oversimplifying it, our storage operations must:</p>
 <ul>
 <li>be either complete or incomplete (<strong>atomicity</strong>), there is no middle ground;</li>
 <li>take the storage management from one to another valid state (<strong>consistency</strong>);</li>
