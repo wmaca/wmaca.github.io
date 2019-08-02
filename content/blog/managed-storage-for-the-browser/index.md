@@ -4,9 +4,13 @@ date: "2019-07-18T17:12:03.284Z"
 description: Discussing the current state of storage on the web and how to implement a proper managed storage solution.
 ---
 
-As an in-depth explanation of a managed storage solution may not be of interest to a broader audience, an analysis of the current available storage mechanisms, their limitations and how to use them for this purpose may be of greater value.
+Over the last years, web applications went from simple pages - where almost everything was handled by a backend - to increasingly complex pieces of software, even capable of running in the absence of internet connectivity. Backend’s responsibilities were reduced, in some cases, to only serve static assets.
 
-This writing will not go into the details of how to code a managed storage solution for the browser, nor try to exhaust such a broad theme. Consider this a dump of the thinking process and research behind the construction of such solution.
+To enable this evolution, applications started to require a way to store assets and other data locally. And, for this, a wide variety of mechanisms were made available, trying always to address the evolving needs of web development. Naturally, new use cases are constantly appearing, in a faster pace than standards could anticipate.
+
+This writing will try to address one of those use cases that is still not fully addressed: a _managed storage solution_. This solution provides, to a browser-based application, a **secure** and **controlled** way to locally persist assets and other forms of data. These emphasised properties are the key of such solution, and will be discussed in detail.
+
+During this document, the current available storage mechanisms and their limitations are discussed. With the knowledge acquired, it is shown how they can be used to build a managed storage solution.
 
 In the end of this reading, you are expected to have a better understating of what the browser can and can’t do when it comes to storage, and to know how careful you need to be when dealing with this.
 
@@ -93,11 +97,11 @@ if (!isPersistent) {
 }
 ```
 
-The code above ~may not be the optimal user experience~, as it may result in an unannounced browser prompt, which may lead to user confusion. Application developers should act exactly as `persist()` does, checking if the `"persistent-storage"` permission is `"granted"` — using `navigator.permissions.query()`. This way the user can receive prior clarification about the request for persistent storage that is about to happen.
+The code above _may not be the optimal user experience_, as it may result in an unannounced browser prompt, which may lead to user confusion. Application developers should act exactly as `persist()` does, checking if the `"persistent-storage"` permission is `"granted"` — using `navigator.permissions.query()`. This way the user can receive prior clarification about the request for persistent storage that is about to happen.
 
 The browser may decide to grant an application the right to persist storage without directly asking the user for it. Or it may not even prompt the user to ask for persistent storage when instructed to (.e.g. opaque origin, or already knows the current permission state). For the former, each browser seems to have its own criteria, so do not wonder if `isPersistent` being `true` on the first run of this snippet.
 
-As probably already noticed, given the API presented, persistence is not fine-grained. Either everything is persistent, or nothing is. But what is ~everything~? For site storage, which includes Cache API and IndexedDB, ~each origin~ has ~one~ site storage unit. ~Each of these units contains a single bucket~. And the explained-above persistence mode ~is applied to the whole bucket~.
+As probably already noticed, given the API presented, persistence is not fine-grained. Either everything is persistent, or nothing is. But what is _everything_? For site storage, which includes Cache API and IndexedDB, _each origin_ has _one_ site storage unit. _Each of these units contains a single bucket_. And the explained-above persistence mode _is applied to the whole bucket_.
 
 To make things worse, buckets are atomic units. When deleted, they must be deleted in its entirety. For a **best-effort** bucket under storage pressure, this means loosing all stored information, and not only the necessary bits.
 
@@ -105,7 +109,7 @@ If bucket modes could be applied in a more fine-grained fashion, a storage manag
 
 ### Pressure: I will let you know if you ask me
 
-As, by choosing **persistent** mode, there is no built-in eviction in place, a storage management solution must be responsible to control the usage of free space. Fortunately, browsers provide `navigator.storage.estimate()`, which allows an application to retrieve the number of ~bytes~ available to (`quota`) and used by (`usage`) an origin’s site storage unit.
+As, by choosing **persistent** mode, there is no built-in eviction in place, a storage management solution must be responsible to control the usage of free space. Fortunately, browsers provide `navigator.storage.estimate()`, which allows an application to retrieve the number of _bytes_ available to (`quota`) and used by (`usage`) an origin’s site storage unit.
 
 ```javascript
 const { quota, usage } = await navigator.storage.estimate()
@@ -153,7 +157,7 @@ Again, not using **Cache API** for assets appears as an option. Regardless of wh
 
 In case the managed storage solution offers user-defined units of storage (not to be confused with the earlier presented concept of unit), a version can be associated to each of them. During a version upgrade, emptying the unit may be simplest approach to proper handle versioning.
 
-With the possibility of multiple windows running different versions ~of the application~, it is important to note that different versions ~of the storage~ may be accessed at the same time. Such a managed storage solution should handle this case, as it may lead to unexpected behaviour of the application.
+With the possibility of multiple windows running different versions _of the application_, it is important to note that different versions _of the storage_ may be accessed at the same time. Such a managed storage solution should handle this case, as it may lead to unexpected behaviour of the application.
 
 ## Conclusion
 
